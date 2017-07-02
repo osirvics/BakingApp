@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">BakingApp</string>
+
+    <!-- Error Messages-->
+    <string name="error_msg">Sorry! Couldn\'t fetch recipes :)</string>
+    <string name="btn_retry">RETRY</string>
+    <string name="error_msg_no_internet">No internet connection, Turn ON data or wifi</string>
+    <string name="error_msg_timeout">The server took too long to respond</string>
+    <string name="error_msg_unknown">An unexpected error occurred</string>
+    <string name="tap_to_reload">Tap to reload</string>
+    <string name="title_item_list">Steps</string>
+    <string name="title_item_detail">Step Detail</string>
+
+    <string name="ingredient_list">Ingredients: </string>
+    <string name="servings">Servings: %1$s </string>
+    <string name="preposition">%1$s of</string>
+
+    <!--Content Authority-->
+    <string name="content_authority">com.example.victor.bakingapp</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+
+    <!--Menu String-->
+    <string name="menu_header">Select favorite recipe</string>
+    <string name="menu_nutella">Nutella Pie</string>
+    <string name="menu_brownies">Brownies</string>
+    <string name="menu_yellow_cake">Yellow Cake</string>
+    <string name="menu_cheesecake">Cheesecake</string>
+
+
+
+
+
+</resources>

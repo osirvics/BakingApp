@@ -1,0 +1,34 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.android.popularmovies.MainActivity">
+    <!--<item-->
+    <!--android:id="@+id/action_settings"-->
+    <!--android:orderInCategory="100"-->
+    <!--android:title="@string/action_settings"-->
+    <!--app:showAsAction="never" />-->
+
+    <item
+        android:id="@+id/menu_sort_by"
+        app:showAsAction="never"
+        android:orderInCategory="200"
+        android:title="@string/menu_header">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_favorite_nutella"
+                    android:title="@string/menu_nutella"/>
+                <item
+                    android:id="@+id/menu_favorite_brownies"
+                    android:title="@string/menu_brownies"/>
+                <item
+                    android:id="@+id/menu_favorite_yellow_Cake"
+                    android:title="@string/menu_yellow_cake"/>
+                <item
+                    android:id="@+id/menu_favorite_cheesecake"
+                    android:title="@string/menu_cheesecake"/>
+            </group>
+        </menu>
+    </item>
+
+</menu>
