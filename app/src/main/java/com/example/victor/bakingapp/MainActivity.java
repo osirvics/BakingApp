@@ -5,6 +5,9 @@ import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.annotation.VisibleForTesting;
+import android.support.test.espresso.IdlingResource;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
@@ -44,12 +47,14 @@ public class MainActivity extends AppCompatActivity implements  LoaderManager.Lo
     private ArrayList<Ingredient> ingredients;
     private RecipeListAdapter adapter;
     private int favorite_recipe = 1;
-    private static final int LOADER_ID_RECIPE = 034;
+    private static final int LOADER_ID_RECIPE = 34;
     @BindView(R.id.recipe_list_recyclerview) RecyclerView recipe_list_recyclerview;
     @BindView(R.id.empty) ProgressBar empty;
     @BindView(R.id.error_layout) LinearLayout errorLayout;
     @BindView(R.id.error_btn_retry) Button btnRetry;
     @BindView(R.id.error_txt_cause) TextView txtError;
+    @Nullable
+    private SimpleIdlingResource mIdlingResource;
 
 
     @Override
@@ -60,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements  LoaderManager.Lo
         recipes = savedInstanceState.getParcelableArrayList("recipe");
         }
         ButterKnife.bind(this);
+        getIdlingResource();
         Utils.getFavorieRecipe(this);
         displayData();
     }
@@ -75,6 +81,9 @@ public class MainActivity extends AppCompatActivity implements  LoaderManager.Lo
         if (recipes != null) {
             populateList();
         } else {
+            if (mIdlingResource != null) {
+                mIdlingResource.setIdleState(false);
+            }
             BakingApiService apiService =
                     BakingClient.getClient().create(BakingApiService.class);
             Call<List<Recipe>> call = apiService.getRecipes();
@@ -84,6 +93,9 @@ public class MainActivity extends AppCompatActivity implements  LoaderManager.Lo
                     if (response.code() == 200) {
                         recipes = new ArrayList<>(response.body());
                         populateList();
+                        if (mIdlingResource != null) {
+                            mIdlingResource.setIdleState(true);
+                        }
                         PersistData.cacheOfflineData(getApplicationContext(), recipes);
                         RecipeService.startAction(getApplicationContext());
                     }
@@ -243,10 +255,23 @@ public class MainActivity extends AppCompatActivity implements  LoaderManager.Lo
         }
 
         populateList();
+        if (mIdlingResource != null) {
+            mIdlingResource.setIdleState(true);
+        }
+
     }
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
 
+    }
+
+    @VisibleForTesting
+    @NonNull
+    public IdlingResource getIdlingResource() {
+        if (mIdlingResource == null) {
+            mIdlingResource = new SimpleIdlingResource();
+        }
+        return mIdlingResource;
     }
 }
