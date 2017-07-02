@@ -27,7 +27,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 @RunWith(AndroidJUnit4.class)
 public class IdlingResourceMainActivityTest {
 
-    private static final String RECIPE_NAME = "Cheesecake";
+    private static final String RECIPE_NAME = "Nutella Pie";
 
     @Rule
     public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class);

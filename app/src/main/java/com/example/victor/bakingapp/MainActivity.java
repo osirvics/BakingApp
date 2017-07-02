@@ -27,7 +27,6 @@ import com.example.victor.bakingapp.api.BakingApiService;
 import com.example.victor.bakingapp.api.BakingClient;
 import com.example.victor.bakingapp.data.PersistData;
 import com.example.victor.bakingapp.data.RecipeContract;
-import com.example.victor.bakingapp.model.Ingredient;
 import com.example.victor.bakingapp.model.Recipe;
 import com.example.victor.bakingapp.widgets.RecipeService;
 
@@ -44,7 +43,6 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements  LoaderManager.LoaderCallbacks<Cursor>  {
     private ArrayList<Recipe> recipes;
-    private ArrayList<Ingredient> ingredients;
     private RecipeListAdapter adapter;
     private int favorite_recipe = 1;
     private static final int LOADER_ID_RECIPE = 34;
