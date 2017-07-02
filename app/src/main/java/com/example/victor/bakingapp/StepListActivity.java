@@ -69,9 +69,9 @@ public class StepListActivity extends AppCompatActivity implements OnItemClickLi
 
         }
 
-        if (findViewById(R.id.item_detail_container) != null) {
-            mTwoPane = true;
-        }
+//        if (findViewById(R.id.item_detail_container) != null) {
+//            mTwoPane = true;
+//        }
     }
 
     private void populateIngredients(TextView textView, ArrayList<Ingredient> ingredients){
@@ -108,7 +108,8 @@ public class StepListActivity extends AppCompatActivity implements OnItemClickLi
 
     @Override
     public void OnItemClick(int position) {
-        if (mTwoPane) {
+        boolean tabletSize = getResources().getBoolean(R.bool.isTablet);
+        if (tabletSize) {
             Bundle arguments = new Bundle();
             arguments.putParcelableArrayList("data", steps);
             arguments.putInt("pos", position);

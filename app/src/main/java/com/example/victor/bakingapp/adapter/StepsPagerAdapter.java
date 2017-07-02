@@ -2,7 +2,7 @@ package com.example.victor.bakingapp.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.victor.bakingapp.model.PlaceholderFragment;
 import com.example.victor.bakingapp.model.Step;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * Created by Victor on 29/06/2017.
  */
 
-public class StepsPagerAdapter extends FragmentStatePagerAdapter {
+public class StepsPagerAdapter extends FragmentPagerAdapter {
         public ArrayList<Step> steps = new ArrayList<>();
 
         public StepsPagerAdapter(FragmentManager fm, ArrayList<Step> steps) {
