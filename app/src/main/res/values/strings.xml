@@ -2,9 +2,9 @@
     <string name="app_name">BakingApp</string>
 
     <!-- Error Messages-->
-    <string name="error_msg">Sorry! Couldn\'t fetch recipes :)</string>
-    <string name="btn_retry">RETRY</string>
-    <string name="error_msg_no_internet">No internet connection, Turn ON data or wifi</string>
+    <string name="error_msg" translatable="false">Sorry! Couldn\'t fetch recipes :)</string>
+    <string name="btn_retry" translatable="false">RETRY</string>
+    <string name="error_msg_no_internet" translatable="false">No internet connection, Turn ON data or wifi</string>
     <string name="error_msg_timeout">The server took too long to respond</string>
     <string name="error_msg_unknown">An unexpected error occurred</string>
     <string name="tap_to_reload">Tap to reload</string>
@@ -26,9 +26,6 @@
     <string name="menu_brownies">Brownies</string>
     <string name="menu_yellow_cake">Yellow Cake</string>
     <string name="menu_cheesecake">Cheesecake</string>
-
-
-
 
 
 </resources>
