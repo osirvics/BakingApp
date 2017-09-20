@@ -1,5 +1,5 @@
 ## BakingApp
-Final Android associate developer fast track project. this is an app showing a list baking recipes
+Final Android associate developer fast track project. this is an app showing a list baking of recipes
 
 ## Screenshots
 
